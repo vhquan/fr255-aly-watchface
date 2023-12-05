@@ -1,18 +1,18 @@
 <drawable-list id="Aly">
     <bitmap id="AuthorIcon" x="29%" y="87%" filename="heart.png" />
-    <bitmap id="AuthorIcon1" x="63%" y="87%" filename="lovers.png" />
+    <!-- <bitmap id="AuthorIcon1" x="63%" y="87%" filename="lovers.png" /> -->
     <!-- icon for data monitor -->
-    <bitmap id="batteryIcon" x="30" y="185" filename="battery.png" />
-    <bitmap id="stepIcon" x="40" y="205" filename="footprint.png" />
+    <bitmap id="batteryIcon" x="45%" y="178" filename="battery.png" />
+    <bitmap id="stepIcon" x="45" y="205" filename="footprint.png" />
     <bitmap id="heartRateIcon" x="35%" y="3%" filename="heart-rate.png" />
-    <bitmap id="activeCaloIcon" x="215" y="185" filename="fire.png" />
+    <bitmap id="activeCaloIcon" x="215" y="175" filename="fire.png" />
     <bitmap id="distanceIcon" x="200" y="205" filename="distance.png" />
     <bitmap id="upstairsIcon" x="25%" y="15%" filename="upstairs.png" />
-    <bitmap id="targetFloorIcon" x="51%" y="14%" filename="achievement.png" />
-    <bitmap id="downstairsIcon" x="36%" y="15%" filename="downstairs.png" />
-    <bitmap id="respirationIcon" x="67%" y="15%" filename="respiration-rate.png" />
+    <bitmap id="targetFloorIcon" x="65%" y="15%" filename="achievement.png" />
+    <bitmap id="downstairsIcon" x="45%" y="15%" filename="downstairs.png" />
+    <!-- <bitmap id="respirationIcon" x="67%" y="15%" filename="respiration-rate.png" /> -->
     <!-- battery -->
-    <shape type="rectangle" x="50" y="195" width="70" height="5" color="#00611A" corner_radius="6" />
+    <!-- <shape type="rectangle" x="50" y="195" width="70" height="5" color="#00611A" corner_radius="6" /> -->
     <!-- step -->
-    <shape type="rectangle" x="57" y="216" width="63" height="5" color="#007e8c" corner_radius="6" />
+    <!-- <shape type="rectangle" x="57" y="216" width="63" height="5" color="#007e8c" corner_radius="6" /> -->
 </drawable-list>

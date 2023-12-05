@@ -13,8 +13,10 @@ class beeDanceAnimationController {
             _animation = new WatchUi.AnimationLayer(
                 Rez.Drawables.beeDancers,
                 {
-                    :locX => 35,
-                    :locY =>125,
+                    // :locX => 35,
+                    // :locY =>125,
+                    :locX => 6,
+                    :locY => 100,
                 }
             );
 
