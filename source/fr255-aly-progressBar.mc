@@ -29,7 +29,7 @@ class HorizontalProgressBar extends WatchUi.Drawable {
 
   function draw(dc) {
     dc.setColor(color, color);
-    dc.fillRoundedRectangle(locX, locY, width * percentage, height, 10);
+    dc.fillRoundedRectangle(locX, locY, width * percentage, height, 6);
   }
 }
 
@@ -52,6 +52,6 @@ class VerticalProgressBar extends WatchUi.Drawable {
   function draw(dc) {
     dc.setColor(color, color);
     dc.fillRoundedRectangle(locX, locY + height * (1 - percentage), width,
-                            height * percentage, 10);
+                            height * percentage, 6);
   }
 }

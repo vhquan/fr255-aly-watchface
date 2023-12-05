@@ -12,7 +12,9 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   function onUpdate(dc as Dc) as Void {
     showTime();
     showDate();
+    var batteryDisplay = showBattery();
     showAuthor();
+    showLoveDays();
 
     View.onUpdate(dc);
 
@@ -20,27 +22,7 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     var myAly = new Rez.Drawables.Aly();
     myAly.draw(dc);
 
-    var moveBar = new HorizontalProgressBar({
-      :locX => 50,
-      :locY => 50,
-      :width => 50,
-      :height => 10,
-      :color => 16719360 // #FF1E00
-    });
-
-    moveBar.setPercent(0.5);
-    moveBar.draw(dc);
-
-    var batBar = new VerticalProgressBar({
-      :locX => 50,
-      :locY => 100,
-      :width => 10,
-      :height => 50,
-      :color => Graphics.COLOR_BLUE
-    });
-
-    batBar.setPercent(1);
-    batBar.draw(dc);
+    drawBattery(50, 190, 60, 5, 65348, batteryDisplay / 100, dc);
   }
 
   function onShow() as Void {}
@@ -49,7 +31,30 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   function onEnterSleep() as Void {}
 
  private
-  function showTime() {
+  function drawBattery(x, y, w, h, color, percentage, dc as Dc) as Void {
+    var mBatteryBar = new HorizontalProgressBar({
+      :locX => x,
+      :locY => y,
+      :width => w,
+      :height => h,
+      :color => color
+    });
+
+    mBatteryBar.setPercent(percentage);
+    mBatteryBar.draw(dc);
+  }
+
+ private
+  function showBattery() as Lang.Float {
+    var mBattery = System.getSystemStats().battery;
+
+    var mBatteryDisplay = View.findDrawableById("BatteryDisplay") as Text;
+    mBatteryDisplay.setText(mBattery.format("%d") + "%");
+    return mBattery;
+  }
+
+ private
+  function showTime() as Void {
     var mTime = System.getClockTime();
 
     var mHourView = View.findDrawableById("HourDisplay") as Text;
@@ -60,7 +65,7 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   }
 
  private
-  function showDate() {
+  function showDate() as Void {
     var mDate = Time.Gregorian.info(Time.now(), Time.FORMAT_LONG);
 
     var mDayView = View.findDrawableById("DayDisplay") as Text;
@@ -74,7 +79,26 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   }
 
  private
-  function showAuthor() {
+  function showLoveDays() as Void {
+    var mBeginLoveDay = {
+      :year => 2021,
+      :month => 12,
+      :day => 20,
+      :hour => 0,
+      :minute => 1
+    };
+    var mBeginMoment = Time.Gregorian.moment(mBeginLoveDay);
+
+    var mCurrentMoment = new Time.Moment(Time.today().value());
+
+    var mLoveDaysView = View.findDrawableById("LoveDaysDisplay") as Text;
+    mLoveDaysView.setText(Lang.format(
+        "$1$ days since", [mCurrentMoment.subtract(mBeginMoment).value() /
+                              Gregorian.SECONDS_PER_DAY]));
+  }
+
+ private
+  function showAuthor() as Void {
     var authorView = View.findDrawableById("AuthorDisplay") as Text;
     authorView.setText("By Aly's Quan");
   }
