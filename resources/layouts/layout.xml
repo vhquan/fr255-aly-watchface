@@ -1,24 +1,21 @@
 <layout id="WatchFace">
-    <label id="HourDisplay" x="30%" y="45" font="@Fonts.emblemaone100" justification="Graphics.TEXT_JUSTIFY_LEFT" color="#9ef547" />
-    <label id="MinDisplay" x="55%" y="110" font="@Fonts.emblemaone80" justification="Graphics.TEXT_JUSTIFY_LEFT" color="#9ef547" />
+    <label id="TimeDisplay" x="20%" y="18%" font="@Fonts.shrikhand_34" justification="Graphics.TEXT_JUSTIFY_LEFT" color="#9ef547" />
+    <!-- <label id="DateDisplay" x="83%" y="22%" font="@Fonts.allan_16" justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_WHITE" /> -->
+    <label id="DateDisplay" x="83%" y="22%" font="@Fonts.allan_16" justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_YELLOW" />
 
-    <label id="DayOfWeekDisplay" x="77%" y="67" font="@Fonts.biorhyme16" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_WHITE" />
-    <label id="DayDisplay" x="76%" y="75" font="@Fonts.emblemaone40" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_WHITE" />
-    <label id="MonthDisplay" x="76%" y="108" font="@Fonts.emblemaone20" justification="Graphics.TEXT_JUSTIFY_LEFT" color="#9ef547" />
+    <label id="BatteryDisplay" x="43%" y="70%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+    <label id="StepDisplay" x="30%" y="80%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="HeartRateDisplay" x="50%" y="3%" font="@Fonts.allan_16" justification="Graphics.TEXT_JUSTIFY_CENTER" />
 
-    <label id="BatteryDisplay" x="43%" y="70%" font="@Fonts.biorhyme16" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
-    <label id="StepDisplay" x="30%" y="80%" font="@Fonts.biorhyme16" justification="Graphics.TEXT_JUSTIFY_LEFT" />
-    <label id="HeartRateDisplay" x="125" y="10" font="@Fonts.biorhyme16" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="CalDisplay" x="74%" y="32%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_LEFT" />
 
-    <label id="CalDisplay" x="80%" y="70%" font="@Fonts.biorhyme16" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+    <label id="DistanceDisplay" x="190" y="208" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
 
-    <label id="DistanceDisplay" x="190" y="208" font="@Fonts.biorhyme16" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+    <label id="ClimbFloorDisplay" x="15%" y="32%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+    <label id="DescendFloorDisplay" x="28%" y="32%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="TargetFloorDisplay" x="52%" y="32%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <!-- <label id="RespirationRateDisplay" x="76%" y="16%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_LEFT" /> -->
 
-    <label id="ClimbFloorDisplay" x="22%" y="16%" font="@Fonts.biorhyme16" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
-    <label id="DescendFloorDisplay" x="57%" y="16%" font="@Fonts.biorhyme16" justification="Graphics.TEXT_JUSTIFY_LEFT" />
-    <label id="TargetFloorDisplay" x="76%" y="16%" font="@Fonts.biorhyme16" justification="Graphics.TEXT_JUSTIFY_LEFT" />
-    <!-- <label id="RespirationRateDisplay" x="76%" y="16%" font="@Fonts.biorhyme16" justification="Graphics.TEXT_JUSTIFY_LEFT" /> -->
-
-    <label id="AuthorDisplay" x="40%" y="88%" font="@Fonts.biorhyme16" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_WHITE" />
-    <label id="LoveDaysDisplay" x="center" y="92%" font="@Fonts.biorhyme16" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />
+    <label id="AuthorDisplay" x="22%" y="12%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_WHITE" />
+    <label id="LoveDaysDisplay" x="75%" y="12%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_WHITE" />
 </layout>
