@@ -2,26 +2,26 @@
     <label id="TimeDisplay" x="12%" y="15%" font="@Fonts.ribey_52" justification="Graphics.TEXT_JUSTIFY_LEFT" color="#9ef547" />
     <label id="DateDisplay" x="87%" y="22%" font="@Fonts.galada_34" justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_YELLOW" />
 
-    <label id="BatteryDisplay" x="25%" y="45%" font="@Fonts.macondo_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
-    <label id="BatteryInDaysDisplay" x="54%" y="45%" font="@Fonts.macondo_18" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+    <label id="BatteryDisplay" x="25%" y="45%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="BatteryInDaysDisplay" x="54%" y="45%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
 
-    <label id="StepDisplay" x="17%" y="58%" font="@Fonts.macondo_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
-    <label id="StepGoalDisplay" x="54%" y="58%" font="@Fonts.macondo_18" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+    <label id="StepDisplay" x="17%" y="58%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="StepGoalDisplay" x="54%" y="58%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
 
-    <label id="HeartRateDisplay" x="50%" y="3%" font="@Fonts.macondo_18" justification="Graphics.TEXT_JUSTIFY_CENTER" />
+    <label id="HeartRateDisplay" x="50%" y="3%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_CENTER" />
 
-    <label id="CalDisplay" x="74%" y="35%" font="@Fonts.macondo_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
-    <label id="ClimbFloorDisplay" x="15%" y="35%" font="@Fonts.macondo_18" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
-    <label id="DescendFloorDisplay" x="28%" y="35%" font="@Fonts.macondo_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
-    <label id="TargetFloorDisplay" x="52%" y="35%" font="@Fonts.macondo_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="CalDisplay" x="74%" y="35%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="ClimbFloorDisplay" x="15%" y="35%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+    <label id="DescendFloorDisplay" x="28%" y="35%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="TargetFloorDisplay" x="52%" y="35%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
 
-    <label id="DistanceDisplay" x="46%" y="87%" font="@Fonts.macondo_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="DistanceDisplay" x="46%" y="87%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
 
-    <label id="RecoveryDisplay" x="48%" y="74%" font="@Fonts.macondo_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
-    <label id="RespirationRateDisplay" x="26%" y="74%" font="@Fonts.macondo_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="RecoveryDisplay" x="48%" y="74%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="RespirationRateDisplay" x="26%" y="74%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
 
-    <!-- <label id="SpO2Display" x="75%" y="84%" font="@Fonts.macondo_18" justification="Graphics.TEXT_JUSTIFY_LEFT" /> -->
+    <!-- <label id="SpO2Display" x="75%" y="84%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_LEFT" /> -->
 
-    <label id="AuthorDisplay" x="22%" y="12%" font="@Fonts.allan_16" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_WHITE" />
-    <label id="LoveDaysDisplay" x="75%" y="12%" font="@Fonts.allan_16" justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_WHITE" />
+    <label id="AuthorDisplay" x="21%" y="12%" font="@Fonts.allan_18" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_WHITE" />
+    <label id="LoveDaysDisplay" x="75%" y="12%" font="@Fonts.allan_18" justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_WHITE" />
 </layout>

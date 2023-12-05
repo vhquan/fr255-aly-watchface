@@ -1,8 +1,8 @@
 <fonts>
 
-<font id="ribey_52" filename="ribey_52.fnt" filter=" :0123456789" />
-<font id="allan_16" filename="allan_16.fnt" filter=" !%'(),./~0123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
-<font id="macondo_18" filename="macondo_18.fnt" filter=" !%'(),./~0123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
-<font id="galada_34" filename="galada_34.fnt" filter=" ,0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
+<font id="ribey_52" antialias="true" filename="ribey_52.fnt" filter=" :0123456789" />
+<font id="allan_18" antialias="true" filename="allan_18.fnt" filter=" !%'(),./~0123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
+<font id="bell_18" antialias="true" filename="bell_18.fnt" filter=" !%'(),./~0123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
+<font id="galada_34" antialias="true" filename="galada_34.fnt" filter=" ,0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
 
 </fonts>
