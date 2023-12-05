@@ -1,18 +1,18 @@
 <drawable-list id="Aly">
     <bitmap id="AuthorIcon" x="45%" y="10%" filename="heart.png" />
-    <bitmap id="batteryIcon" x="5%" y="45%" filename="battery.png" />
-    <bitmap id="stepIcon" x="5%" y="57%" filename="footprint.png" />
-    <!-- <bitmap id="heartRateIcon" x="35%" y="3%" filename="heart-rate.png" /> -->
-    <bitmap id="calIcon" x="63%" y="30%" filename="fire.png" />
-    
-    <bitmap id="targetFloorIcon" x="40%" y="30%" filename="achievement.png" />
-    <bitmap id="upAndDown" x="17%" y="30%" filename="up-and-down.png" />
 
-    <bitmap id="respirationIcon" x="12%" y="70%" filename="respiration-rate.png" />
-    <bitmap id="distanceIcon" x="25%" y="83%" filename="distance.png" />
+    <bitmap id="batteryIcon" x="5%" y="48%" filename="battery.png" />
+    <bitmap id="stepIcon" x="5%" y="60%" filename="footprint.png" />
 
-    <bitmap id="recoveryIcon" x="36%" y="70%" filename="recovery.png" />
+    <bitmap id="calIcon" x="63%" y="34%" filename="fire.png" />
+    <bitmap id="targetFloorIcon" x="40%" y="34%" filename="achievement.png" />
+    <bitmap id="upAndDown" x="17%" y="34%" filename="up-and-down.png" />
 
-    <bitmap id="authorIcon" x="55%" y="40%" filename="beemine.png" />
+    <bitmap id="respirationIcon" x="13%" y="73%" filename="respiration-rate.png" />
+    <bitmap id="recoveryIcon" x="37%" y="73%" filename="recovery.png" />
+
+    <bitmap id="distanceIcon" x="34%" y="86%" filename="distance.png" />
+
+    <bitmap id="authorIcon" x="55%" y="43%" filename="beemine.png" />
     <!-- <bitmap id="oxygenIcon" x="55%" y="80%" filename="oxygen-saturation.png" /> -->
 </drawable-list>
