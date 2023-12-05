@@ -1,20 +1,26 @@
 <layout id="WatchFace">
     <label id="TimeDisplay" x="20%" y="18%" font="@Fonts.shrikhand_34" justification="Graphics.TEXT_JUSTIFY_LEFT" color="#9ef547" />
-    <!-- <label id="DateDisplay" x="83%" y="22%" font="@Fonts.allan_16" justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_WHITE" /> -->
     <label id="DateDisplay" x="83%" y="22%" font="@Fonts.allan_16" justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_YELLOW" />
 
-    <label id="BatteryDisplay" x="43%" y="70%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
-    <label id="StepDisplay" x="30%" y="80%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="BatteryDisplay" x="25%" y="42%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="BatteryInDaysDisplay" x="50%" y="42%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+
+    <label id="StepDisplay" x="17%" y="55%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="StepGoalDisplay" x="50%" y="55%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+
     <label id="HeartRateDisplay" x="50%" y="3%" font="@Fonts.allan_16" justification="Graphics.TEXT_JUSTIFY_CENTER" />
 
-    <label id="CalDisplay" x="74%" y="32%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="kCalDisplay" x="74%" y="32%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_LEFT" />
 
-    <label id="DistanceDisplay" x="190" y="208" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
+    <label id="DistanceDisplay" x="38%" y="84%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="RecoveryDisplay" x="47%" y="71%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_LEFT" />
 
     <label id="ClimbFloorDisplay" x="15%" y="32%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
     <label id="DescendFloorDisplay" x="28%" y="32%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_LEFT" />
     <label id="TargetFloorDisplay" x="52%" y="32%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_LEFT" />
-    <!-- <label id="RespirationRateDisplay" x="76%" y="16%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_LEFT" /> -->
+    <label id="RespirationRateDisplay" x="25%" y="71%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+
+    <!-- <label id="SpO2Display" x="75%" y="84%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_LEFT" /> -->
 
     <label id="AuthorDisplay" x="22%" y="12%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_WHITE" />
     <label id="LoveDaysDisplay" x="75%" y="12%" font="@Fonts.allan_14" justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_WHITE" />
