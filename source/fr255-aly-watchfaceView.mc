@@ -16,8 +16,31 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
 
     View.onUpdate(dc);
 
+    // draw object from drawable-list
     var myAly = new Rez.Drawables.Aly();
     myAly.draw(dc);
+
+    var moveBar = new HorizontalProgressBar({
+      :locX => 50,
+      :locY => 50,
+      :width => 50,
+      :height => 10,
+      :color => Graphics.COLOR_ORANGE
+    });
+
+    moveBar.setPercent(0.5);
+    moveBar.draw(dc);
+
+    var batBar = new VerticalProgressBar({
+      :locX => 50,
+      :locY => 100,
+      :width => 10,
+      :height => 50,
+      :color => Graphics.COLOR_BLUE
+    });
+
+    batBar.setPercent(1);
+    batBar.draw(dc);
   }
 
   function onShow() as Void {}
