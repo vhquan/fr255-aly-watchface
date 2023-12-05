@@ -6,4 +6,5 @@
     <font id="alkatra16" filename="alkatra16.fnt" filter=" 0123456789:,%ABCDEFGHIJKLMNOPQRSTUVWXYZ'abcdefghijklmnopqrstuvwxyz" />
     <font id="alkatra20" filename="alkatra20.fnt" filter=" 0123456789:,%ABCDEFGHIJKLMNOPQRSTUVWXYZ'abcdefghijklmnopqrstuvwxyz" />
     <font id="agbalumo16" filename="agbalumo16.fnt" filter=" 0123456789:,%ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz" />
+    <font id="agbalumo20" filename="agbalumo20.fnt" filter=" 0123456789:,%ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz" />
 </fonts>

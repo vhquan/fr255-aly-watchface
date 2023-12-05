@@ -1,7 +1,19 @@
 <drawable-list id="Aly">
     <bitmap id="AuthorIcon" x="74" y="227" filename="heart.png" />
+    <bitmap id="AuthorIcon1" x="170" y="231" filename="bubble-tea.png" />
     <!-- icon for data monitor -->
     <bitmap id="batteryIcon" x="30" y="185" filename="battery.png" />
+    <bitmap id="stepIcon" x="40" y="205" filename="footprint.png" />
+    <bitmap id="heartRateIcon" x="90" y="5" filename="heart-rate.png" />
+    <bitmap id="activeCaloIcon" x="215" y="185" filename="fire.png" />
+    <bitmap id="distanceIcon" x="200" y="205" filename="distance.png" />
     <!-- progress bar for data monitor -->
-    <shape type="rectangle" x="50" y="190" width="60" height="5" color="#00611A" corner_radius="6" />
+    <!-- battery -->
+    <shape type="rectangle" x="50" y="195" width="70" height="5" color="#00611A" corner_radius="6" />
+    <!-- calories -->
+    <shape type="rectangle" x="140" y="195" width="70" height="5" color="#fac4a5" corner_radius="6" />
+    <!-- step -->
+    <shape type="rectangle" x="57" y="216" width="63" height="5" color="#007e8c" corner_radius="6" />
+    <!-- distance -->
+    <!-- <shape type="rectangle" x="57" y="216" width="70" height="5" color="#007e8c" corner_radius="6" /> -->
 </drawable-list>
