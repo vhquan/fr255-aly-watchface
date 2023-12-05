@@ -1,0 +1,5 @@
+<fonts>
+    <font id="googleFont" filename="google.fnt" filter="0123456789" />
+    <font id="upperGoogleFont" filename="upperGoogle.fnt" filter="ABCDEFGHIJKLMNOPQRSTUVWXYZ" />
+    <font id="lowerGoogleFont" filename="lowerGoogle.fnt" filter="abcdefghijklmnopqrstuvwxyz" />
+</fonts>

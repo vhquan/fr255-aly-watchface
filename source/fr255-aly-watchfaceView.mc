@@ -5,7 +5,8 @@ import Toybox.WatchUi;
 import Toybox.Time;
 
 class fr255_aly_watchfaceView extends WatchUi.WatchFace {
-  private var backgroundImg;
+ private
+  var backgroundImg;
 
   function initialize() {
     WatchFace.initialize();
@@ -13,7 +14,9 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   }
 
   // Load your resources here
-  function onLayout(dc as Dc) as Void { setLayout(Rez.Layouts.WatchFace(dc)); }
+  function onLayout(dc as Dc) as Void {
+    setLayout(Rez.Layouts.WatchFace(dc));
+  }
 
   // Called when this View is brought to the foreground. Restore
   // the state of this View and prepare it to be shown. This includes
@@ -24,7 +27,7 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   function onUpdate(dc as Dc) as Void {
     showTime();
     showDate();
-    
+
     // Call the parent onUpdate function to redraw the layout
     View.onUpdate(dc);
 
