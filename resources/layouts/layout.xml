@@ -1,6 +1,6 @@
 <layout id="WatchFace">
-    <label id="TimeDisplay" x="10%" y="18%" font="@Fonts.shrikhand_46" justification="Graphics.TEXT_JUSTIFY_LEFT" color="#9ef547" />
-    <label id="DateDisplay" x="85%" y="23%" font="@Fonts.marck_24" justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_YELLOW" />
+    <label id="TimeDisplay" x="12%" y="15%" font="@Fonts.ribey_52" justification="Graphics.TEXT_JUSTIFY_LEFT" color="#9ef547" />
+    <label id="DateDisplay" x="87%" y="22%" font="@Fonts.galada_34" justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_YELLOW" />
 
     <label id="BatteryDisplay" x="25%" y="45%" font="@Fonts.macondo_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
     <label id="BatteryInDaysDisplay" x="54%" y="45%" font="@Fonts.macondo_18" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
