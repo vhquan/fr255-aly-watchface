@@ -25,7 +25,7 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
       :locY => 50,
       :width => 50,
       :height => 10,
-      :color => Graphics.COLOR_ORANGE
+      :color => 16719360 // #FF1E00
     });
 
     moveBar.setPercent(0.5);
