@@ -20,13 +20,13 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   function onUpdate(dc as Dc) as Void {
     showTime();
     showDate();
-    var batteryDisplay = showBattery();
-    var stepDisplay = showSteps();
+    showBattery();
+    showSteps();
     showHeartRate();
     showActiveCalories();
     showDistance();
     showFloorUpDown();
-    showRespirationRate();
+    // showRespirationRate();
 
     showAuthor();
     showLoveDays();
@@ -37,8 +37,8 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     var myAly = new Rez.Drawables.Aly();
     myAly.draw(dc);
 
-    drawBattery(50, 195, 70, 5, 65348, batteryDisplay / 100, dc);
-    drawStep(57, 216, 63, 5, 58364, stepDisplay, dc);
+    // drawBattery(50, 195, 70, 5, 65348, batteryDisplay / 100, dc);
+    // drawStep(57, 216, 63, 5, 58364, stepDisplay, dc);
   }
 
   function onShow() as Void {
@@ -142,19 +142,15 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   }
 
  private
-  function showSteps() as Float {
+  function showSteps() as Void {
     var mStep = ActivityMonitor.getInfo().steps.toString();
-    var stepGoalPercent = ((ActivityMonitor.getInfo().steps).toFloat() /
-                           (ActivityMonitor.getInfo().stepGoal).toFloat());
 
     var mStepView = View.findDrawableById("StepDisplay") as Text;
     mStepView.setText(mStep);
-
-    return stepGoalPercent;
   }
 
  private
-  function showBattery() as Lang.Float {
+  function showBattery() as Void {
     var mSysStat = System.getSystemStats();
     var mBattery = mSysStat.battery;
     var mBatteryInDays = mSysStat.batteryInDays;
@@ -162,7 +158,6 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     var mBatteryDisplay = View.findDrawableById("BatteryDisplay") as Text;
     mBatteryDisplay.setText(mBattery.format("%d") + "%" + " (~ " +
                             mBatteryInDays.format("%d") + " d)");
-    return mBattery;
   }
 
  private
