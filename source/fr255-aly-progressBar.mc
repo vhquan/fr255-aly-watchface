@@ -28,11 +28,8 @@ class HorizontalProgressBar extends WatchUi.Drawable {
   function setPercent(value) { percentage = clamp(value, 1.0, 0.0); }
 
   function draw(dc) {
-    dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_LT_GRAY);
-    dc.drawRoundedRectangle(locX, locY, width, height, 10);
     dc.setColor(color, color);
-    dc.fillRoundedRectangle(locX + 2, locY + 2, (width - 4) * percentage,
-                            height - 4, 10);
+    dc.fillRoundedRectangle(locX, locY, width * percentage, height, 10);
   }
 }
 
@@ -53,10 +50,8 @@ class VerticalProgressBar extends WatchUi.Drawable {
   function setPercent(value) { percentage = clamp(value, 1.0, 0.0); }
 
   function draw(dc) {
-    dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_LT_GRAY);
-    dc.drawRoundedRectangle(locX, locY, width, height, 10);
     dc.setColor(color, color);
-    dc.fillRoundedRectangle(locX + 2, locY + height * (1 - percentage) + 2,
-                            width - 4, (height - 4) * percentage, 10);
+    dc.fillRoundedRectangle(locX, locY + height * (1 - percentage), width,
+                            height * percentage, 10);
   }
 }
