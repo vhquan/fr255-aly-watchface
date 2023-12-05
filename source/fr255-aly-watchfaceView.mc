@@ -16,7 +16,7 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     showTime();
     showDate();
     var batteryPer = showBattery();
-    var stepPer = showSteps();
+    showSteps();
     showHeartRate();
     showCalories();
     showRespirationRate();
@@ -31,8 +31,7 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     myAly.draw(dc);
 
     /* update progress bars */
-    drawBattery(43, 135, 100, 9, 65348, batteryPer, dc);
-    drawStep(43, 170, 100, 9, 58364, stepPer, dc);
+    drawBattery(230, 20, 35, 20, 4, batteryPer, dc);
   }
 
   function onShow() as Void {}
@@ -108,13 +107,13 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   }
 
  private
-  function drawBattery(x, y, w, h, color, percentage, dc as Dc) as Void {
-    var mBatteryBar = new HorizontalProgressBar({
+  function drawBattery(x, y, w, h, radius, percentage, dc as Dc) as Void {
+    var mBatteryBar = new BatteryBar({
       :locX => x,
       :locY => y,
       :width => w,
       :height => h,
-      :color => color
+      :radius => radius
     });
 
     mBatteryBar.setPercent(percentage);
@@ -122,7 +121,7 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   }
 
  private
-  function showSteps() as Float {
+  function showSteps() as Void {
     var info = ActivityMonitor.getInfo();
 
     var mStepView = View.findDrawableById("StepDisplay") as Text;
@@ -130,12 +129,6 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
 
     var mStepGoalView = View.findDrawableById("StepGoalDisplay") as Text;
     mStepGoalView.setText(info.stepGoal.toString());
-
-    if (info.stepGoal == 0) {
-      return 0.0;
-    }
-
-    return (info.steps.toFloat() / info.stepGoal.toFloat());
   }
 
  private
@@ -144,10 +137,6 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
 
     var mBatteryDisplay = View.findDrawableById("BatteryDisplay") as Text;
     mBatteryDisplay.setText(mSysStat.battery.format("%d") + "%");
-
-    var mBatteryInDaysDisplay =
-        View.findDrawableById("BatteryInDaysDisplay") as Text;
-    mBatteryInDaysDisplay.setText(mSysStat.batteryInDays.format("%d") + " d");
 
     return (mSysStat.battery / 100);
   }

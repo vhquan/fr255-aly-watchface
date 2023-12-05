@@ -1,8 +1,8 @@
 <fonts>
 
-<font id="ribey_52" filename="ribey_52.fnt" filter=" :0123456789" />
-<font id="allan_16" filename="allan_16.fnt" filter=" !%'(),./~0123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
-<font id="macondo_18" filename="macondo_18.fnt" filter=" !%'(),./~0123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
-<font id="galada_34" filename="galada_34.fnt" filter=" ,0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
+<font id="sonsieone_66" antialias="true" filename="sonsieone_66.fnt" filter=" :0123456789" />
+<font id="racing_40" antialias="true" filename="racing_40.fnt" filter=" ,0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
+<font id="fugaz_18" antialias="true" filename="fugaz_18.fnt" filter=" !%'(),./~0123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
+<font id="courgette_22" antialias="true" filename="courgette_22.fnt" filter=" !%'(),./~0123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
 
 </fonts>

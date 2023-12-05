@@ -1,8 +1,7 @@
 <drawable-list id="Aly">
     <bitmap id="AuthorIcon" x="45%" y="10%" filename="heart.png" />
 
-    <bitmap id="batteryIcon" x="5%" y="48%" filename="battery.png" />
-    <bitmap id="stepIcon" x="5%" y="60%" filename="footprint.png" />
+    <bitmap id="stepIcon" x="230" y="16%" filename="footprint.png" />
 
     <bitmap id="respirationIcon" x="13%" y="73%" filename="respiration-rate.png" />
 
