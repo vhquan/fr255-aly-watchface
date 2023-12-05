@@ -7,7 +7,13 @@ import Toybox.ActivityMonitor;
 import Toybox.UserProfile;
 
 class fr255_aly_watchfaceView extends WatchUi.WatchFace {
-  function initialize() { WatchFace.initialize(); }
+ private
+  var _animationDelegate;
+
+  function initialize() {
+    WatchFace.initialize();
+    _animationDelegate = new beeDanceAnimationController();
+  }
 
   function onLayout(dc as Dc) as Void { setLayout(Rez.Layouts.WatchFace(dc)); }
 
@@ -35,10 +41,13 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     drawStep(57, 216, 63, 5, 58364, stepDisplay, dc);
   }
 
-  function onShow() as Void {}
-  function onHide() as Void {}
-  function onExitSleep() as Void {}
-  function onEnterSleep() as Void {}
+  function onShow() as Void {
+    _animationDelegate.handleOnShow(self);
+    _animationDelegate.play();
+  }
+  function onHide() as Void { _animationDelegate.handleOnHide(self); }
+  function onExitSleep() as Void { _animationDelegate.play(); }
+  function onEnterSleep() as Void { _animationDelegate.stop(); }
 
  private
   function showDistance() as Void {
@@ -62,14 +71,17 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     mCalBar.draw(dc);
   }
 
-  private function showRespirationRate() as Void {
+ private
+  function showRespirationRate() as Void {
     var info = ActivityMonitor.getInfo();
 
-    var mRespirationRateView = View.findDrawableById("RespirationRateDisplay") as Text;
+    var mRespirationRateView =
+        View.findDrawableById("RespirationRateDisplay") as Text;
     mRespirationRateView.setText(info.respirationRate.toString());
   }
 
-  private function showFloorUpDown() as Void {
+ private
+  function showFloorUpDown() as Void {
     var info = ActivityMonitor.getInfo();
 
     var climbView = View.findDrawableById("ClimbFloorDisplay") as Text;
@@ -148,7 +160,8 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     var mBatteryInDays = mSysStat.batteryInDays;
 
     var mBatteryDisplay = View.findDrawableById("BatteryDisplay") as Text;
-    mBatteryDisplay.setText(mBattery.format("%d") + "%" + " (~ " + mBatteryInDays.format("%d") + " d)");
+    mBatteryDisplay.setText(mBattery.format("%d") + "%" + " (~ " +
+                            mBatteryInDays.format("%d") + " d)");
     return mBattery;
   }
 
@@ -191,9 +204,9 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     var mCurrentMoment = new Time.Moment(Time.today().value());
 
     var mLoveDaysView = View.findDrawableById("LoveDaysDisplay") as Text;
-    mLoveDaysView.setText(Lang.format(
-        "$1$ days", [mCurrentMoment.subtract(mBeginMoment).value() /
-                              Gregorian.SECONDS_PER_DAY]));
+    mLoveDaysView.setText(
+        Lang.format("$1$ days", [mCurrentMoment.subtract(mBeginMoment).value() /
+                                    Gregorian.SECONDS_PER_DAY]));
   }
 
  private
