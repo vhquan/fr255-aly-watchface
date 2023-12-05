@@ -4,12 +4,7 @@
     <bitmap id="batteryIcon" x="5%" y="48%" filename="battery.png" />
     <bitmap id="stepIcon" x="5%" y="60%" filename="footprint.png" />
 
-    <bitmap id="calIcon" x="63%" y="34%" filename="fire.png" />
-    <bitmap id="targetFloorIcon" x="40%" y="34%" filename="achievement.png" />
-    <bitmap id="upAndDown" x="17%" y="34%" filename="up-and-down.png" />
-
     <bitmap id="respirationIcon" x="13%" y="73%" filename="respiration-rate.png" />
-    <bitmap id="recoveryIcon" x="37%" y="73%" filename="recovery.png" />
 
     <bitmap id="distanceIcon" x="34%" y="86%" filename="distance.png" />
 

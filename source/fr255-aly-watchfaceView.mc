@@ -21,8 +21,6 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     showCalories();
     showRespirationRate();
     showDistance();
-    showFloorUpDown();
-    showRecovery();
 
     showAuthorStr();
 
@@ -72,27 +70,6 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     var mRespirationRateView =
         View.findDrawableById("RespirationRateDisplay") as Text;
     mRespirationRateView.setText(info.respirationRate.toString());
-  }
-
- private
-  function showRecovery() as Void {
-    var info = ActivityMonitor.getInfo();
-
-    var mRecovery = View.findDrawableById("RecoveryDisplay") as Text;
-    mRecovery.setText(info.timeToRecovery.toString() + " h");
-  }
-
- private
-  function showFloorUpDown() as Void {
-    var info = ActivityMonitor.getInfo();
-
-    var climbView = View.findDrawableById("ClimbFloorDisplay") as Text;
-    var descendView = View.findDrawableById("DescendFloorDisplay") as Text;
-    var targetView = View.findDrawableById("TargetFloorDisplay") as Text;
-
-    climbView.setText(info.floorsClimbed.toString());
-    targetView.setText(info.floorsClimbedGoal.toString());
-    descendView.setText(info.floorsDescended.toString());
   }
 
  private
