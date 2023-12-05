@@ -7,6 +7,8 @@
     <bitmap id="heartRateIcon" x="90" y="5" filename="heart-rate.png" />
     <bitmap id="activeCaloIcon" x="215" y="185" filename="fire.png" />
     <bitmap id="distanceIcon" x="200" y="205" filename="distance.png" />
+    <bitmap id="upstairsIcon" x="30%" y="15%" filename="upstairs.png" />
+    <bitmap id="downstairsIcon" x="70%" y="15%" filename="downstairs.png" />
     <!-- progress bar for data monitor -->
     <!-- battery -->
     <shape type="rectangle" x="50" y="195" width="70" height="5" color="#00611A" corner_radius="6" />

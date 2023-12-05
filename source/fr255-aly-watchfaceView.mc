@@ -32,7 +32,7 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     drawBattery(50, 195, 70, 5, 65348, batteryDisplay / 100, dc);
     drawStep(57, 216, 63, 5, 58364, stepDisplay, dc);
     // offset 1 pixel for x to overdrawn the void space
-    drawCal(140 + 1, 195, 70, 5, 16735488, activeCal, dc);
+    drawCal(140, 195, 71, 5, 16735488, activeCal, dc);
   }
 
   function onShow() as Void {}
@@ -40,10 +40,12 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   function onExitSleep() as Void {}
   function onEnterSleep() as Void {}
 
-  private function showDistance() as Void {
+ private
+  function showDistance() as Void {
     var info = ActivityMonitor.getInfo();
     var mDistanceView = View.findDrawableById("DistanceDisplay") as Text;
-    mDistanceView.setText(Lang.format("$1$ km", [((info.distance / 100) / 1000).format("%d")]));
+    mDistanceView.setText(
+        Lang.format("$1$ km", [((info.distance / 100) / 1000).format("%d")]));
   }
 
  private
