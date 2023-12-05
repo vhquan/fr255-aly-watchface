@@ -17,8 +17,10 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     var batteryDisplay = showBattery();
     var stepDisplay = showSteps();
     showHeartRate();
-    var activeCal = showActiveCalories();
+    showActiveCalories();
     showDistance();
+    showFloorUpDown();
+    showRespirationRate();
 
     showAuthor();
     showLoveDays();
@@ -31,8 +33,6 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
 
     drawBattery(50, 195, 70, 5, 65348, batteryDisplay / 100, dc);
     drawStep(57, 216, 63, 5, 58364, stepDisplay, dc);
-    // offset 1 pixel for x to overdrawn the void space
-    drawCal(140, 195, 71, 5, 16735488, activeCal, dc);
   }
 
   function onShow() as Void {}
@@ -45,7 +45,7 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     var info = ActivityMonitor.getInfo();
     var mDistanceView = View.findDrawableById("DistanceDisplay") as Text;
     mDistanceView.setText(
-        Lang.format("$1$ km", [((info.distance / 100) / 1000).format("%d")]));
+        Lang.format("$1$ m", [(info.distance / 100).format("%d")]));
   }
 
  private
@@ -62,40 +62,30 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     mCalBar.draw(dc);
   }
 
- private
-  function showActiveCalories() as Float {
-    var mDate = Time.Gregorian.info(Time.now(), Time.FORMAT_SHORT);
-    var mRMR = 0;
-    var mProfile = null;
-    var mRestingCal = 0;
-    var mActive = null;
-    var mResting = null;
+  private function showRespirationRate() as Void {
     var info = ActivityMonitor.getInfo();
 
-    // RMR function source Harris-Benedict
-    mProfile = UserProfile.getProfile();
-    if (mProfile.gender == UserProfile.GENDER_FEMALE) {
-      mRMR = 655 + (9.5 * mProfile.weight / 1000) + (1.9 * mProfile.height) +
-             (4.7 * (mDate.year - mProfile.birthYear));
-    }
-    if (mProfile.gender == UserProfile.GENDER_MALE) {
-      mRMR = 66 + (13.7 * mProfile.weight / 1000) + (5 * mProfile.height) -
-             (6.8 * (mDate.year - mProfile.birthYear));
-    }
+    var mRespirationRateView = View.findDrawableById("RespirationRateDisplay") as Text;
+    mRespirationRateView.setText(info.respirationRate.toString());
+  }
 
-    mRestingCal = (info.activeMinutesDay.total) * mRMR / (24 * 60);
+  private function showFloorUpDown() as Void {
+    var info = ActivityMonitor.getInfo();
 
-    mActive = View.findDrawableById("ActiveCalDisplay") as Text;
-    mActive.setText((info.calories - mRestingCal).format("%d"));
+    var climbView = View.findDrawableById("ClimbFloorDisplay") as Text;
+    var descendView = View.findDrawableById("DescendFloorDisplay") as Text;
+    var targetView = View.findDrawableById("TargetFloorDisplay") as Text;
 
-    mResting = View.findDrawableById("RestingCalDisplay") as Text;
-    mResting.setText(mRestingCal.format("%d"));
+    climbView.setText(info.floorsClimbed.toString());
+    targetView.setText(info.floorsClimbedGoal.toString());
+    descendView.setText(info.floorsDescended.toString());
+  }
 
-    if (info.calories == 0) {
-      return 0.0;
-    }
-
-    return (1 - mRestingCal / info.calories);
+ private
+  function showActiveCalories() as Void {
+    var info = ActivityMonitor.getInfo();
+    var mCalView = View.findDrawableById("CalDisplay") as Text;
+    mCalView.setText(info.calories.toString() + " kcal");
   }
 
  private
@@ -153,10 +143,12 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
 
  private
   function showBattery() as Lang.Float {
-    var mBattery = System.getSystemStats().battery;
+    var mSysStat = System.getSystemStats();
+    var mBattery = mSysStat.battery;
+    var mBatteryInDays = mSysStat.batteryInDays;
 
     var mBatteryDisplay = View.findDrawableById("BatteryDisplay") as Text;
-    mBatteryDisplay.setText(mBattery.format("%d") + "%");
+    mBatteryDisplay.setText(mBattery.format("%d") + "%" + " (~ " + mBatteryInDays.format("%d") + " d)");
     return mBattery;
   }
 
@@ -200,7 +192,7 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
 
     var mLoveDaysView = View.findDrawableById("LoveDaysDisplay") as Text;
     mLoveDaysView.setText(Lang.format(
-        "$1$ days since", [mCurrentMoment.subtract(mBeginMoment).value() /
+        "$1$ days", [mCurrentMoment.subtract(mBeginMoment).value() /
                               Gregorian.SECONDS_PER_DAY]));
   }
 
