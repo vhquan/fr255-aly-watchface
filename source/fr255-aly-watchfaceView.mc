@@ -97,7 +97,8 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   function showActiveCalories() as Void {
     var info = ActivityMonitor.getInfo();
     var mCalView = View.findDrawableById("CalDisplay") as Text;
-    mCalView.setText(info.calories.toString() + " kcal");
+    var calories = info.calories * 1000;
+    mCalView.setText(calories.toString() + " Cal");
   }
 
  private
@@ -164,25 +165,16 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   function showTime() as Void {
     var mTime = System.getClockTime();
 
-    var mHourView = View.findDrawableById("HourDisplay") as Text;
-    mHourView.setText(Lang.format("$1$", [mTime.hour.format("%02d")]));
-
-    var mMinView = View.findDrawableById("MinDisplay") as Text;
-    mMinView.setText(Lang.format("$1$", [mTime.min.format("%02d")]));
+    var mTimeView = View.findDrawableById("TimeDisplay") as Text;
+    mTimeView.setText(Lang.format("$1$:$2$", [mTime.hour.format("%02d"), mTime.min.format("%02d")]));
   }
 
  private
   function showDate() as Void {
     var mDate = Time.Gregorian.info(Time.now(), Time.FORMAT_LONG);
 
-    var mDayView = View.findDrawableById("DayDisplay") as Text;
-    mDayView.setText(Lang.format("$1$", [mDate.day]));
-
-    var mMonthView = View.findDrawableById("MonthDisplay") as Text;
-    mMonthView.setText(Lang.format("$1$", [mDate.month]));
-
-    var mDayOfWeekView = View.findDrawableById("DayOfWeekDisplay") as Text;
-    mDayOfWeekView.setText(Lang.format("$1$", [mDate.day_of_week]));
+    var mDateView = View.findDrawableById("DateDisplay") as Text;
+    mDateView.setText(Lang.format("$1$, $2$ $3$ $4$", [mDate.day_of_week, mDate.day, mDate.month, mDate.year]));
   }
 
  private
@@ -207,6 +199,6 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
  private
   function showAuthor() as Void {
     var authorView = View.findDrawableById("AuthorDisplay") as Text;
-    authorView.setText("By Aly's Quan");
+    authorView.setText("Aly's Quan");
   }
 }
