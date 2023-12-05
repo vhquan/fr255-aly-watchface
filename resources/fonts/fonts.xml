@@ -1,5 +1,9 @@
 <fonts>
-    <font id="googleFont" filename="google.fnt" filter="0123456789" />
-    <font id="upperGoogleFont" filename="upperGoogle.fnt" filter="ABCDEFGHIJKLMNOPQRSTUVWXYZ" />
-    <font id="lowerGoogleFont" filename="lowerGoogle.fnt" filter="abcdefghijklmnopqrstuvwxyz" />
+    <font id="space20" filename="space20.fnt" filter=" 0123456789:,%ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
+    <font id="emblemaone20" filename="emblemaone20.fnt" filter=" 0123456789:,%ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
+    <font id="emblemaone40" filename="emblemaone40.fnt" filter=" 0123456789:" />
+    <font id="emblemaone80" filename="emblemaone80.fnt" filter=" 0123456789:" />
+    <font id="emblemaone100" filename="emblemaone100.fnt" filter=" 0123456789:" />
+    <font id="alkatra16" filename="alkatra16.fnt" filter=" 0123456789:,%ABCDEFGHIJKLMNOPQRSTUVWXYZ'abcdefghijklmnopqrstuvwxyz" />
+    <font id="alkatra20" filename="alkatra20.fnt" filter=" 0123456789:,%ABCDEFGHIJKLMNOPQRSTUVWXYZ'abcdefghijklmnopqrstuvwxyz" />
 </fonts>
