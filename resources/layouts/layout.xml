@@ -17,6 +17,6 @@
 
     <!-- <label id="SpO2Display" x="75%" y="84%" font="@Fonts.redhat_24" justification="Graphics.TEXT_JUSTIFY_LEFT" /> -->
 
-    <label id="AuthorDisplay" x="50%" y="85%" font="@Fonts.courgette_20" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />
+    <label id="AuthorDisplay" x="50%" y="85%" font="@Fonts.courgette_20" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_PINK" />
     <label id="LoveDaysDisplay" x="18%" y="76%" font="@Fonts.allan_26" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_WHITE" />
 </layout>

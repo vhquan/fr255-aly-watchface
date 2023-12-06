@@ -11,11 +11,7 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
  private
   var xmas, normal;
 
-  function initialize() {
-    WatchFace.initialize();
-    xmas = WatchUi.loadResource(Rez.Drawables.authorIcon1);
-    normal = WatchUi.loadResource(Rez.Drawables.authorIcon2);
-  }
+  function initialize() { WatchFace.initialize(); }
 
   function onLayout(dc as Dc) as Void { setLayout(Rez.Layouts.WatchFace(dc)); }
 
@@ -28,7 +24,7 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
 
     View.onUpdate(dc);
 
-    // draw object from drawable-list
+    // draw your own custom from here
     var myAly = new Rez.Drawables.Aly();
     myAly.draw(dc);
 
@@ -37,7 +33,10 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     drawBackgroundBasedOnMoment(dc, xmas, normal);
   }
 
-  function onShow() as Void {}
+  function onShow() as Void {
+    xmas = WatchUi.loadResource(Rez.Drawables.authorIcon1);
+    normal = WatchUi.loadResource(Rez.Drawables.authorIcon2);
+  }
   function onHide() as Void {}
   function onExitSleep() as Void {}
   function onEnterSleep() as Void {}
