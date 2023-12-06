@@ -1,8 +1,8 @@
 <fonts>
-    <font id="emblemaone20" filename="emblemaone20.fnt" filter=" 0123456789:,%ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
-    <font id="emblemaone40" filename="emblemaone40.fnt" filter=" 0123456789:" />
-    <font id="emblemaone80" filename="emblemaone80.fnt" filter=" 0123456789:" />
-    <font id="emblemaone100" filename="emblemaone100.fnt" filter=" 0123456789:" />
 
-    <font id="biorhyme16" filename="biorhyme16.fnt" filter=" !%',/:~(.)0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
+<font id="shrikhand_34" filename="shrikhand_34.fnt" filter=" :0123456789" />
+<font id="allan_20" filename="allan_20.fnt" filter=" !%'(),./~0123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
+<font id="allan_16" filename="allan_16.fnt" filter=" !%'(),./~0123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
+<font id="allan_14" filename="allan_14.fnt" filter=" !%'(),./~0123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
+
 </fonts>
