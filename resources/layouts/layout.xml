@@ -1,23 +1,22 @@
 <layout id="WatchFace">
-    <label id="DateDisplay" x="2%" y="2%" font="@Fonts.racing_40" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_YELLOW" />
-    <label id="TimeDisplay" x="2%" y="10%" font="@Fonts.sonsieone_66" justification="Graphics.TEXT_JUSTIFY_LEFT" color="#9ef547" />
-    
+    <label id="DateDisplay" x="6%" y="3%" font="@Fonts.unica_36" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_YELLOW" />
+    <label id="TimeDisplay" x="2%" y="10%" font="@Fonts.limelight_70" justification="Graphics.TEXT_JUSTIFY_LEFT" color="#9ef547" />
 
-    <label id="BatteryDisplay" x="85%" y="6%" font="@Fonts.fugaz_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="BatteryDisplay" x="72%" y="5%" font="@Fonts.redhat_24" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="HeartRateDisplay" x="222" y="17%" font="@Fonts.redhat_24" justification="Graphics.TEXT_JUSTIFY_LEFT" />
 
-    <label id="StepDisplay" x="269" y="15%" font="@Fonts.fugaz_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
-    <label id="StepGoalDisplay" x="269" y="21%" font="@Fonts.fugaz_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="StepDisplay" x="222" y="29%" font="@Fonts.redhat_24" justification="Graphics.TEXT_JUSTIFY_LEFT" />    
 
-    <label id="HeartRateDisplay" x="50%" y="3%" font="@Fonts.fugaz_18" justification="Graphics.TEXT_JUSTIFY_CENTER" />
+    <label id="CalDisplay" x="222" y="41%" font="@Fonts.redhat_24" justification="Graphics.TEXT_JUSTIFY_LEFT" />
 
-    <label id="CalDisplay" x="74%" y="35%" font="@Fonts.fugaz_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="DistanceDisplay" x="222" y="53%" font="@Fonts.redhat_24" justification="Graphics.TEXT_JUSTIFY_LEFT" />
 
-    <label id="DistanceDisplay" x="46%" y="87%" font="@Fonts.fugaz_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="RespirationRateDisplay" x="222" y="65%" font="@Fonts.redhat_24" justification="Graphics.TEXT_JUSTIFY_LEFT" />
 
-    <label id="RespirationRateDisplay" x="26%" y="74%" font="@Fonts.fugaz_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="ActiveMinDisplay" x="222" y="77%" font="@Fonts.redhat_24" justification="Graphics.TEXT_JUSTIFY_LEFT" />
 
-    <!-- <label id="SpO2Display" x="75%" y="84%" font="@Fonts.fugaz_18" justification="Graphics.TEXT_JUSTIFY_LEFT" /> -->
+    <!-- <label id="SpO2Display" x="75%" y="84%" font="@Fonts.redhat_24" justification="Graphics.TEXT_JUSTIFY_LEFT" /> -->
 
-    <label id="AuthorDisplay" x="22%" y="90%" font="@Fonts.courgette_22" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_WHITE" />
-    <label id="LoveDaysDisplay" x="75%" y="90%" font="@Fonts.courgette_22" justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_WHITE" />
+    <label id="AuthorDisplay" x="50%" y="85%" font="@Fonts.courgette_20" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />
+    <label id="LoveDaysDisplay" x="18%" y="76%" font="@Fonts.allan_26" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_WHITE" />
 </layout>

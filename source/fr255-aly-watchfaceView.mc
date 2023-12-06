@@ -13,15 +13,10 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   function onLayout(dc as Dc) as Void { setLayout(Rez.Layouts.WatchFace(dc)); }
 
   function onUpdate(dc as Dc) as Void {
-    showTime();
-    showDate();
+    showDateTime();
     var batteryPer = showBattery();
-    showSteps();
+    showActivityData();
     showHeartRate();
-    showCalories();
-    showRespirationRate();
-    showDistance();
-
     showAuthorStr();
 
     View.onUpdate(dc);
@@ -31,7 +26,7 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     myAly.draw(dc);
 
     /* update progress bars */
-    drawBattery(230, 20, 35, 20, 4, batteryPer, dc);
+    drawBattery(180, 20, 35, 20, 4, batteryPer, dc);
   }
 
   function onShow() as Void {}
@@ -40,43 +35,23 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   function onEnterSleep() as Void {}
 
  private
-  function showDistance() as Void {
+  function showActivityData() as Void {
     var info = ActivityMonitor.getInfo();
+
     var mDistanceView = View.findDrawableById("DistanceDisplay") as Text;
+    var mStepView = View.findDrawableById("StepDisplay") as Text;
+    var mRespirationRateView =
+        View.findDrawableById("RespirationRateDisplay") as Text;
+    var mCalView = View.findDrawableById("CalDisplay") as Text;
+    var mActiveMinView = View.findDrawableById("ActiveMinDisplay") as Text;
+
     mDistanceView.setText(Lang.format(
         "$1$ km",
         [(info.distance.toFloat() / 100.0 / 1000.0).format("%.02f")]));
-  }
-
- private
-  function drawCal(x, y, w, h, color, percentage, dc as Dc) as Void {
-    var mCalBar = new InverseHorizontalProgressBar({
-      :locX => x,
-      :locY => y,
-      :width => w,
-      :height => h,
-      :color => color
-    });
-
-    mCalBar.setPercent(percentage);
-    mCalBar.draw(dc);
-  }
-
- private
-  function showRespirationRate() as Void {
-    var info = ActivityMonitor.getInfo();
-
-    var mRespirationRateView =
-        View.findDrawableById("RespirationRateDisplay") as Text;
-    mRespirationRateView.setText(info.respirationRate.toString());
-  }
-
- private
-  function showCalories() as Void {
-    var info = ActivityMonitor.getInfo();
-    var mCalView = View.findDrawableById("CalDisplay") as Text;
-
+    mStepView.setText(info.steps.toString());
+    mRespirationRateView.setText(info.respirationRate.toString() + " br/m");
     mCalView.setText(info.calories.toString());
+    mActiveMinView.setText(info.activeMinutesDay.total.toString() + " mins");
   }
 
  private
@@ -86,24 +61,10 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     var mHeartRateView = View.findDrawableById("HeartRateDisplay") as Text;
 
     if (mCurHeartRate == ActivityMonitor.INVALID_HR_SAMPLE) {
-      mHeartRateView.setText("--");
+      mHeartRateView.setText("-- bpm");
     } else {
-      mHeartRateView.setText(mCurHeartRate.format("%d"));
+      mHeartRateView.setText(mCurHeartRate.format("%d") + " bpm");
     }
-  }
-
- private
-  function drawStep(x, y, w, h, color, percentage, dc as Dc) as Void {
-    var mStepBar = new HorizontalProgressBar({
-      :locX => x,
-      :locY => y,
-      :width => w,
-      :height => h,
-      :color => color
-    });
-
-    mStepBar.setPercent(percentage);
-    mStepBar.draw(dc);
   }
 
  private
@@ -121,17 +82,6 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   }
 
  private
-  function showSteps() as Void {
-    var info = ActivityMonitor.getInfo();
-
-    var mStepView = View.findDrawableById("StepDisplay") as Text;
-    mStepView.setText(info.steps.toString());
-
-    var mStepGoalView = View.findDrawableById("StepGoalDisplay") as Text;
-    mStepGoalView.setText(info.stepGoal.toString());
-  }
-
- private
   function showBattery() as Float {
     var mSysStat = System.getSystemStats();
 
@@ -142,21 +92,17 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   }
 
  private
-  function showTime() as Void {
-    var mTime = System.getClockTime();
-
-    var mTimeView = View.findDrawableById("TimeDisplay") as Text;
-    mTimeView.setText(Lang.format(
-        "$1$:$2$", [ mTime.hour.format("%02d"), mTime.min.format("%02d") ]));
-  }
-
- private
-  function showDate() as Void {
+  function showDateTime() as Void {
     var mDate = Time.Gregorian.info(Time.now(), Time.FORMAT_LONG);
+    var mTime = System.getClockTime();
 
     var mDateView = View.findDrawableById("DateDisplay") as Text;
     mDateView.setText(Lang.format(
         "$1$, $2$ $3$", [ mDate.day_of_week, mDate.day, mDate.month ]));
+
+    var mTimeView = View.findDrawableById("TimeDisplay") as Text;
+    mTimeView.setText(Lang.format(
+        "$1$:$2$", [ mTime.hour.format("%02d"), mTime.min.format("%02d") ]));
   }
 
  private
@@ -177,6 +123,6 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
                                     Gregorian.SECONDS_PER_DAY]));
 
     var authorView = View.findDrawableById("AuthorDisplay") as Text;
-    authorView.setText("Aly's Quan");
+    authorView.setText(Rez.Strings.AuthorWannaSay);
   }
 }

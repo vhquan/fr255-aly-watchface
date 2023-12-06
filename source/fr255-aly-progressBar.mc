@@ -56,7 +56,6 @@ class BatteryBar extends WatchUi.Drawable {
     dc.drawRoundedRectangle(locX, locY, width, height, radius);
     dc.fillRoundedRectangle(locX + width, locY + height / 6, 3, height / 1.5,
                             radius);
-    dc.drawLine(locX - 7, locY, locX - 7, locY + 69);
     if (percentage <= 0.06) {
       dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_RED);
     } else {

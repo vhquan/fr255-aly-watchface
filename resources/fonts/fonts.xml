@@ -1,8 +1,9 @@
 <fonts>
 
-<font id="sonsieone_66" antialias="true" filename="sonsieone_66.fnt" filter=" :0123456789" />
-<font id="racing_40" antialias="true" filename="racing_40.fnt" filter=" ,0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
-<font id="fugaz_18" antialias="true" filename="fugaz_18.fnt" filter=" !%'(),./~0123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
-<font id="courgette_22" antialias="true" filename="courgette_22.fnt" filter=" !%'(),./~0123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
+<font id="limelight_70" antialias="true" filename="limelight_70.fnt" filter=" :0123456789" />
+<font id="unica_36" antialias="true" filename="unica_36.fnt" filter=" ,0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
+<font id="redhat_24" antialias="true" filename="redhat_24.fnt" filter=" !%'(),./~0123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
+<font id="courgette_20" antialias="true" filename="courgette_20.fnt" filter=" !%'(),./~0123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
+<font id="allan_26" antialias="true" filename="allan_26.fnt" filter=" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
 
 </fonts>
