@@ -105,12 +105,12 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
 
  private
   function showHeartRate() as Void {
-    var mHeartRateIter = ActivityMonitor.getHeartRateHistory(null, false);
+    var mHeartRateIter = ActivityMonitor.getHeartRateHistory(1, true);
     var mCurHeartRate = mHeartRateIter.next().heartRate;
     var mHeartRateView = View.findDrawableById("HeartRateDisplay") as Text;
 
     if (mCurHeartRate == ActivityMonitor.INVALID_HR_SAMPLE) {
-      mHeartRateView.setText("NaN");
+      mHeartRateView.setText("--");
     } else {
       mHeartRateView.setText(mCurHeartRate.format("%d"));
     }
