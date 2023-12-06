@@ -8,7 +8,14 @@ import Toybox.UserProfile;
 import Toybox.Sensor;
 
 class fr255_aly_watchfaceView extends WatchUi.WatchFace {
-  function initialize() { WatchFace.initialize(); }
+ private
+  var xmas, normal;
+
+  function initialize() {
+    WatchFace.initialize();
+    xmas = WatchUi.loadResource(Rez.Drawables.authorIcon1);
+    normal = WatchUi.loadResource(Rez.Drawables.authorIcon2);
+  }
 
   function onLayout(dc as Dc) as Void { setLayout(Rez.Layouts.WatchFace(dc)); }
 
@@ -27,6 +34,7 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
 
     /* update progress bars */
     drawBattery(180, 20, 35, 20, 4, batteryPer, dc);
+    drawBackgroundBasedOnMoment(dc, xmas, normal);
   }
 
   function onShow() as Void {}
@@ -89,6 +97,17 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     mBatteryDisplay.setText(mSysStat.battery.format("%d") + "%");
 
     return (mSysStat.battery / 100);
+  }
+
+ private
+  function drawBackgroundBasedOnMoment(dc as Dc, xmas, normal) as Void {
+    var mDate = Time.Gregorian.info(Time.now(), Time.FORMAT_SHORT);
+
+    if (mDate.day >= 20 && mDate.day <= 25 && mDate.month == 12) {
+      dc.drawBitmap(0, 0.3 * dc.getHeight(), xmas);
+    } else {
+      dc.drawBitmap(0, 0.3 * dc.getHeight(), normal);
+    }
   }
 
  private

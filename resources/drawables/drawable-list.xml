@@ -11,6 +11,5 @@
     <bitmap id="countDayIcon" x="5%" y="76%" filename="calendar.png" />
 
     <!-- <bitmap id="authorIcon" x="55%" y="43%" filename="beemine.png" /> -->
-    <bitmap id="authorIcon" x="left" y="30%" filename="luv.png" />
     <!-- <bitmap id="oxygenIcon" x="55%" y="80%" filename="oxygen-saturation.png" /> -->
 </drawable-list>
