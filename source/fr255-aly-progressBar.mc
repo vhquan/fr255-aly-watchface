@@ -28,8 +28,10 @@ class HorizontalProgressBar extends WatchUi.Drawable {
   function setPercent(value) { percentage = clamp(value, 1.0, 0.0); }
 
   function draw(dc) {
+    dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_LT_GRAY);
+    dc.drawRectangle(locX, locY, width, height);
     dc.setColor(color, color);
-    dc.fillRoundedRectangle(locX, locY, width * percentage, height, 6);
+    dc.fillRectangle(locX + 3, locY + 3, (width - 6) * percentage, height - 6);
   }
 }
 
