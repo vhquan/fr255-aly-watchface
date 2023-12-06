@@ -3,8 +3,7 @@
     <font id="emblemaone40" filename="emblemaone40.fnt" filter=" 0123456789:" />
     <font id="emblemaone80" filename="emblemaone80.fnt" filter=" 0123456789:" />
     <font id="emblemaone100" filename="emblemaone100.fnt" filter=" 0123456789:" />
-    <font id="alkatra16" filename="alkatra16.fnt" filter=" 0123456789:,%ABCDEFGHIJKLMNOPQRSTUVWXYZ'abcdefghijklmnopqrstuvwxyz" />
-    <font id="alkatra20" filename="alkatra20.fnt" filter=" 0123456789:,%ABCDEFGHIJKLMNOPQRSTUVWXYZ'abcdefghijklmnopqrstuvwxyz" />
-    <font id="agbalumo16" filename="agbalumo16.fnt" filter=" 0123456789:,%ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz" />
-    <font id="agbalumo20" filename="agbalumo20.fnt" filter=" 0123456789:,%ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz" />
+
+    <font id="biorhyme13" filename="biorhyme13.fnt" filter=" !%',/:~(.)0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
+    <font id="biorhyme16" filename="biorhyme16.fnt" filter=" !%',/:~(.)0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
 </fonts>
