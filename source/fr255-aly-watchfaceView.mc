@@ -18,7 +18,7 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     var batteryPer = showBattery();
     var stepPer = showSteps();
     showHeartRate();
-    showActiveCalories();
+    showCalories();
     showRespirationRate();
     showDistance();
     showFloorUpDown();
@@ -33,8 +33,8 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     myAly.draw(dc);
 
     /* update progress bars */
-    drawBattery(43, 125, 90, 9, 65348, batteryPer, dc);
-    drawStep(43, 160, 90, 9, 58364, stepPer, dc);
+    drawBattery(43, 135, 100, 9, 65348, batteryPer, dc);
+    drawStep(43, 170, 100, 9, 58364, stepPer, dc);
   }
 
   function onShow() as Void {}
@@ -96,11 +96,11 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   }
 
  private
-  function showActiveCalories() as Void {
+  function showCalories() as Void {
     var info = ActivityMonitor.getInfo();
-    var mkCalView = View.findDrawableById("kCalDisplay") as Text;
+    var mCalView = View.findDrawableById("CalDisplay") as Text;
 
-    mkCalView.setText(Lang.format("$1$ kCal", [info.calories.format("%.02f")]));
+    mCalView.setText(info.calories.toString());
   }
 
  private
@@ -189,9 +189,8 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     var mDate = Time.Gregorian.info(Time.now(), Time.FORMAT_LONG);
 
     var mDateView = View.findDrawableById("DateDisplay") as Text;
-    mDateView.setText(
-        Lang.format("$1$, $2$ $3$ $4$",
-                    [ mDate.day_of_week, mDate.day, mDate.month, mDate.year ]));
+    mDateView.setText(Lang.format(
+        "$1$, $2$ $3$", [ mDate.day_of_week, mDate.day, mDate.month ]));
   }
 
  private
