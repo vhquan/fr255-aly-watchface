@@ -33,6 +33,29 @@ class HorizontalProgressBar extends WatchUi.Drawable {
   }
 }
 
+class InverseHorizontalProgressBar extends WatchUi.Drawable {
+  hidden var color, locX, locY, width, height, percentage;
+
+  function initialize(params) {
+    Drawable.initialize(params);
+
+    color = params.get( : color);
+    locX = params.get( : locX);
+    locY = params.get( : locY);
+    width = params.get( : width);
+    height = params.get( : height);
+    percentage = 0.0;
+  }
+
+  function setPercent(value) { percentage = clamp(value, 1.0, 0.0); }
+
+  function draw(dc) {
+    dc.setColor(color, color);
+    dc.fillRoundedRectangle(locX + (1 - percentage) * width, locY,
+                            width * percentage, height, 6);
+  }
+}
+
 class VerticalProgressBar extends WatchUi.Drawable {
   hidden var color, locX, locY, width, height, percentage;
 
