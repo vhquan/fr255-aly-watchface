@@ -8,12 +8,16 @@ import Toybox.UserProfile;
 import Toybox.Sensor;
 
 class fr255_aly_watchfaceView extends WatchUi.WatchFace {
- private
-  var xmas, normal;
+  hidden var xmas, normal;
 
   function initialize() { WatchFace.initialize(); }
 
-  function onLayout(dc as Dc) as Void { setLayout(Rez.Layouts.WatchFace(dc)); }
+  /* load your resources here, only load once */
+  function onLayout(dc as Dc) as Void {
+    setLayout(Rez.Layouts.WatchFace(dc));
+    xmas = WatchUi.loadResource(Rez.Drawables.authorIcon1);
+    normal = WatchUi.loadResource(Rez.Drawables.authorIcon2);
+  }
 
   function onUpdate(dc as Dc) as Void {
     showDateTime();
@@ -29,16 +33,18 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     myAly.draw(dc);
 
     /* update progress bars */
-    drawBattery(180, 20, 35, 20, 4, batteryPer, dc);
+    drawBattery(205, 18, 52, 26, 4, batteryPer, dc);
     drawBackgroundBasedOnMoment(dc, xmas, normal);
   }
 
-  function onShow() as Void {
-    xmas = WatchUi.loadResource(Rez.Drawables.authorIcon1);
-    normal = WatchUi.loadResource(Rez.Drawables.authorIcon2);
-  }
+  function onShow() as Void {}
   function onHide() as Void {}
+
+  // The user has just looked at their watch. Timers and animations may be
+  // started here.
   function onExitSleep() as Void {}
+
+  // Terminate any active timers and prepare for slow updates.
   function onEnterSleep() as Void {}
 
  private
@@ -47,8 +53,6 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
 
     var mDistanceView = View.findDrawableById("DistanceDisplay") as Text;
     var mStepView = View.findDrawableById("StepDisplay") as Text;
-    var mRespirationRateView =
-        View.findDrawableById("RespirationRateDisplay") as Text;
     var mCalView = View.findDrawableById("CalDisplay") as Text;
     var mActiveMinView = View.findDrawableById("ActiveMinDisplay") as Text;
 
@@ -56,7 +60,6 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
         "$1$ km",
         [(info.distance.toFloat() / 100.0 / 1000.0).format("%.02f")]));
     mStepView.setText(info.steps.toString());
-    mRespirationRateView.setText(info.respirationRate.toString() + " br/m");
     mCalView.setText(info.calories.toString());
     mActiveMinView.setText(info.activeMinutesDay.total.toString() + " mins");
   }
@@ -139,8 +142,5 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     mLoveDaysView.setText(
         Lang.format("$1$ days", [mCurrentMoment.subtract(mBeginMoment).value() /
                                     Gregorian.SECONDS_PER_DAY]));
-
-    var authorView = View.findDrawableById("AuthorDisplay") as Text;
-    authorView.setText(Rez.Strings.AuthorWannaSay);
   }
 }
