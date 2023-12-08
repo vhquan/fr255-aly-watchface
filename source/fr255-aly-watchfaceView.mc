@@ -1,6 +1,7 @@
 import Toybox.Graphics;
 import Toybox.Lang;
 import Toybox.System;
+import Toybox.Math;
 import Toybox.WatchUi;
 import Toybox.Time;
 import Toybox.ActivityMonitor;
@@ -115,9 +116,13 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     return (mSysStat.battery / 100);
   }
 
+/* TODO: need to put this function slow update 
+  (need to be called in ExitSleep) */
  private
   function drawBackgroundBasedOnMoment(
       dc as Dc, imgArr as Array<WatchUi.BitmapResource>) as Void {
+    var r;
+    Math.srand(System.getTimer());
     var mDate = Time.Gregorian.info(Time.now(), Time.FORMAT_SHORT);
 
     // dc.drawRectangle(0, 0.33 * dc.getHeight(), 170, 170);
@@ -127,7 +132,8 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     } else {
       /* if there are n images to loop -> modulo (n + 1) then + m to shift the
        * order except m images at the beginning */
-      dc.drawBitmap(0, 0.33 * dc.getHeight(), imgArr[mDate.day % 11 + 1]);
+      r = Math.rand() % 10 + 1;
+      dc.drawBitmap(0, 0.33 * dc.getHeight(), imgArr[r]);
     }
   }
 
