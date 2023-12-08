@@ -58,6 +58,7 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   // The user has just looked at their watch. Timers and animations may be
   // started here.
   function onExitSleep() as Void {}
+  /* TODO: Change a internal variable to decide whether to change image or not in onUpdate() function called */
 
   // Terminate any active timers and prepare for slow updates.
   function onEnterSleep() as Void {}
