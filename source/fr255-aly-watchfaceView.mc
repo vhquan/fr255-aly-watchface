@@ -116,8 +116,8 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     return (mSysStat.battery / 100);
   }
 
-/* TODO: need to put this function slow update 
-  (need to be called in ExitSleep) */
+  /* TODO: need to put this function slow update
+    (need to be called in ExitSleep) */
  private
   function drawBackgroundBasedOnMoment(
       dc as Dc, imgArr as Array<WatchUi.BitmapResource>) as Void {
@@ -132,7 +132,7 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     } else {
       /* if there are n images to loop -> modulo (n + 1) then + m to shift the
        * order except m images at the beginning */
-      r = Math.rand() % 10 + 1;
+      r = Math.rand() % 10 + 1;  // random from [1 ---> 11]
       dc.drawBitmap(0, 0.33 * dc.getHeight(), imgArr[r]);
     }
   }
