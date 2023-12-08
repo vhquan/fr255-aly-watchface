@@ -23,4 +23,8 @@
             x="5%"
             y="81%"
             filename="calendar.png" />
+    <bitmap id="musicIcon"
+            x="10%"
+            y="90%"
+            filename="music.png" />
 </drawable-list>

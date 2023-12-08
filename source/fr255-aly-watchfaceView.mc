@@ -8,15 +8,23 @@ import Toybox.UserProfile;
 import Toybox.Sensor;
 
 class fr255_aly_watchfaceView extends WatchUi.WatchFace {
-  hidden var xmas, normal;
+  hidden var img as Array<WatchUi.BitmapResource> = new Array<WatchUi.BitmapResource>[6];
 
   function initialize() { WatchFace.initialize(); }
 
   /* load your resources here, only load once */
   function onLayout(dc as Dc) as Void {
     setLayout(Rez.Layouts.WatchFace(dc));
-    xmas = WatchUi.loadResource(Rez.Drawables.authorIcon1);
-    normal = WatchUi.loadResource(Rez.Drawables.authorIcon2);
+
+    /* for x-mas */
+    img[0] = WatchUi.loadResource(Rez.Drawables.authorIcon1);
+
+    /* for normal day */
+    img[1] = WatchUi.loadResource(Rez.Drawables.authorIcon2);
+    img[2] = WatchUi.loadResource(Rez.Drawables.authorIcon3);
+    img[3] = WatchUi.loadResource(Rez.Drawables.authorIcon4);
+    img[4] = WatchUi.loadResource(Rez.Drawables.authorIcon5);
+    img[5] = WatchUi.loadResource(Rez.Drawables.authorIcon6);
   }
 
   function onUpdate(dc as Dc) as Void {
@@ -33,8 +41,8 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     myAly.draw(dc);
 
     /* update progress bars */
-    drawBattery(210, 19, 45, 25, 4, batteryPer, dc);
-    drawBackgroundBasedOnMoment(dc, xmas, normal);
+    drawBattery(260, 50, 43, 25, 4, batteryPer, dc);
+    drawBackgroundBasedOnMoment(dc, img);
   }
 
   function onShow() as Void {}
@@ -102,15 +110,15 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   }
 
  private
-  function drawBackgroundBasedOnMoment(dc as Dc, xmas, normal) as Void {
+  function drawBackgroundBasedOnMoment(dc as Dc, imgArr as Array<WatchUi.BitmapResource>) as Void {
     var mDate = Time.Gregorian.info(Time.now(), Time.FORMAT_SHORT);
 
-    dc.drawRectangle(0, 0.33 * dc.getHeight(), 170, 170);
+    // dc.drawRectangle(0, 0.33 * dc.getHeight(), 170, 170);
     /* all images is 170x170 pixels */
     if (mDate.day >= 20 && mDate.day <= 25 && mDate.month == 12) {
-      dc.drawBitmap(0, 0.33 * dc.getHeight(), xmas);
+      dc.drawBitmap(0, 0.33 * dc.getHeight(), imgArr[0]);
     } else {
-      dc.drawBitmap(0, 0.33 * dc.getHeight(), normal);
+      dc.drawBitmap(0, 0.33 * dc.getHeight(), imgArr[mDate.day % 5 + 1]);
     }
   }
 

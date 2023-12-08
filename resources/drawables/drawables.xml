@@ -9,4 +9,20 @@
             x="left"
             y="30%"
             filename="luv.png" />
+    <bitmap id="authorIcon3"
+            x="left"
+            y="30%"
+            filename="bee1.png" />
+    <bitmap id="authorIcon4"
+            x="left"
+            y="30%"
+            filename="bee2.png" />
+    <bitmap id="authorIcon5"
+            x="left"
+            y="30%"
+            filename="bee3.png" />
+    <bitmap id="authorIcon6"
+            x="left"
+            y="30%"
+            filename="bee4.png" />
 </drawables>

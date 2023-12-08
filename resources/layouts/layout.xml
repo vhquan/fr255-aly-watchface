@@ -12,7 +12,7 @@
            justification="Graphics.TEXT_JUSTIFY_LEFT"
            color="#9ef547" />
     <label id="BatteryDisplay"
-           x="83%"
+           x="260"
            y="5.5%"
            font="@Fonts.roboto_conden24"
            justification="Graphics.TEXT_JUSTIFY_LEFT"
@@ -45,7 +45,7 @@
     <text-area id="authorText"
                color="#fa8282"
                x="0%"
-               y="90%"
+               y="91%"
                justification="Graphics.TEXT_JUSTIFY_CENTER"
                text="Come What May; Cap Cap"
                font="@Fonts.agbalumo_30"
