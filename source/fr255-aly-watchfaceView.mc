@@ -8,7 +8,8 @@ import Toybox.UserProfile;
 import Toybox.Sensor;
 
 class fr255_aly_watchfaceView extends WatchUi.WatchFace {
-  hidden var img as Array<WatchUi.BitmapResource> = new Array<WatchUi.BitmapResource>[6];
+  hidden var img as Array<WatchUi.BitmapResource> =
+      new Array<WatchUi.BitmapResource>[11];
 
   function initialize() { WatchFace.initialize(); }
 
@@ -17,14 +18,19 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     setLayout(Rez.Layouts.WatchFace(dc));
 
     /* for x-mas */
-    img[0] = WatchUi.loadResource(Rez.Drawables.authorIcon1);
+    img[0] = WatchUi.loadResource(Rez.Drawables.xmas0);
 
     /* for normal day */
-    img[1] = WatchUi.loadResource(Rez.Drawables.authorIcon2);
-    img[2] = WatchUi.loadResource(Rez.Drawables.authorIcon3);
-    img[3] = WatchUi.loadResource(Rez.Drawables.authorIcon4);
-    img[4] = WatchUi.loadResource(Rez.Drawables.authorIcon5);
-    img[5] = WatchUi.loadResource(Rez.Drawables.authorIcon6);
+    img[1] = WatchUi.loadResource(Rez.Drawables.normal1);
+    img[2] = WatchUi.loadResource(Rez.Drawables.normal2);
+    img[3] = WatchUi.loadResource(Rez.Drawables.normal3);
+    img[4] = WatchUi.loadResource(Rez.Drawables.normal4);
+    img[5] = WatchUi.loadResource(Rez.Drawables.normal5);
+    img[6] = WatchUi.loadResource(Rez.Drawables.normal6);
+    img[7] = WatchUi.loadResource(Rez.Drawables.normal7);
+    img[8] = WatchUi.loadResource(Rez.Drawables.normal8);
+    img[9] = WatchUi.loadResource(Rez.Drawables.normal9);
+    img[10] = WatchUi.loadResource(Rez.Drawables.normal10);
   }
 
   function onUpdate(dc as Dc) as Void {
@@ -110,7 +116,8 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   }
 
  private
-  function drawBackgroundBasedOnMoment(dc as Dc, imgArr as Array<WatchUi.BitmapResource>) as Void {
+  function drawBackgroundBasedOnMoment(
+      dc as Dc, imgArr as Array<WatchUi.BitmapResource>) as Void {
     var mDate = Time.Gregorian.info(Time.now(), Time.FORMAT_SHORT);
 
     // dc.drawRectangle(0, 0.33 * dc.getHeight(), 170, 170);
@@ -118,7 +125,9 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     if (mDate.day >= 20 && mDate.day <= 25 && mDate.month == 12) {
       dc.drawBitmap(0, 0.33 * dc.getHeight(), imgArr[0]);
     } else {
-      dc.drawBitmap(0, 0.33 * dc.getHeight(), imgArr[mDate.day % 5 + 1]);
+      /* if there are n images to loop -> modulo (n + 1) then + m to shift the
+       * order except m images at the beginning */
+      dc.drawBitmap(0, 0.33 * dc.getHeight(), imgArr[mDate.day % 11 + 1]);
     }
   }
 
