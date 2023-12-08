@@ -33,7 +33,7 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     myAly.draw(dc);
 
     /* update progress bars */
-    drawBattery(205, 18, 52, 26, 4, batteryPer, dc);
+    drawBattery(210, 19, 45, 25, 4, batteryPer, dc);
     drawBackgroundBasedOnMoment(dc, xmas, normal);
   }
 
@@ -105,10 +105,12 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   function drawBackgroundBasedOnMoment(dc as Dc, xmas, normal) as Void {
     var mDate = Time.Gregorian.info(Time.now(), Time.FORMAT_SHORT);
 
+    dc.drawRectangle(0, 0.33 * dc.getHeight(), 170, 170);
+    /* all images is 170x170 pixels */
     if (mDate.day >= 20 && mDate.day <= 25 && mDate.month == 12) {
-      dc.drawBitmap(0, 0.3 * dc.getHeight(), xmas);
+      dc.drawBitmap(0, 0.33 * dc.getHeight(), xmas);
     } else {
-      dc.drawBitmap(0, 0.3 * dc.getHeight(), normal);
+      dc.drawBitmap(0, 0.33 * dc.getHeight(), normal);
     }
   }
 

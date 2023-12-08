@@ -1,10 +1,26 @@
 <drawable-list id="Aly">
-    <bitmap id="HeartIcon" x="56%" y="16%" filename="heart-beat.png" />
-
-    <bitmap id="stepIcon" x="56%" y="28%" filename="footprint.png" />
-    <bitmap id="caloIcon" x="56%" y="40%" filename="fire.png" />
-    <bitmap id="distanceIcon" x="56%" y="52%" filename="distance.png" />
-    <bitmap id="activeIcon" x="53%" y="76%" filename="yoga.png" />
-
-    <bitmap id="countDayIcon" x="5%" y="76%" filename="calendar.png" />
+    <bitmap id="HeartIcon"
+            x="56%"
+            y="33%"
+            filename="heart-beat.png" />
+    <bitmap id="stepIcon"
+            x="56%"
+            y="45%"
+            filename="footprint.png" />
+    <bitmap id="caloIcon"
+            x="56%"
+            y="57%"
+            filename="fire.png" />
+    <bitmap id="distanceIcon"
+            x="56%"
+            y="69%"
+            filename="distance.png" />
+    <bitmap id="activeIcon"
+            x="56%"
+            y="81%"
+            filename="yoga.png" />
+    <bitmap id="countDayIcon"
+            x="5%"
+            y="81%"
+            filename="calendar.png" />
 </drawable-list>

@@ -1,12 +1,60 @@
 <layout id="WatchFace">
-	<label id="DateDisplay" x="3%" y="top" font="@Fonts.unica_56" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_YELLOW" />
-	<label id="TimeDisplay" x="2%" y="10%" font="@Fonts.limelight_100" justification="Graphics.TEXT_JUSTIFY_LEFT" color="#9ef547" />
-	<label id="BatteryDisplay" x="67%" y="5.5%" font="@Fonts.redhat_24" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_RED" />
-	<label id="HeartRateDisplay" x="222" y="17%" font="@Fonts.redhat_24" justification="Graphics.TEXT_JUSTIFY_LEFT" />
-	<label id="StepDisplay" x="222" y="29%" font="@Fonts.redhat_24" justification="Graphics.TEXT_JUSTIFY_LEFT" />
-	<label id="CalDisplay" x="222" y="41%" font="@Fonts.redhat_24" justification="Graphics.TEXT_JUSTIFY_LEFT" />
-	<label id="DistanceDisplay" x="222" y="53%" font="@Fonts.redhat_24" justification="Graphics.TEXT_JUSTIFY_LEFT" />
-	<label id="ActiveMinDisplay" x="222" y="77%" font="@Fonts.redhat_24" justification="Graphics.TEXT_JUSTIFY_LEFT" />
-	<text-area id="authorText" color="Graphics.COLOR_PINK" x="0%" y="85%" justification="Graphics.TEXT_JUSTIFY_CENTER" text="Crafted with love by your one and only,\njust for you." font="@Fonts.courgette_20" width="100%" height="20%"/>
-	<label id="LoveDaysDisplay" x="18%" y="76%" font="@Fonts.allan_26" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_WHITE" />
+    <label id="DateDisplay"
+           x="3%"
+           y="top"
+           font="@Fonts.unica_56"
+           justification="Graphics.TEXT_JUSTIFY_LEFT"
+           color="Graphics.COLOR_YELLOW" />
+    <label id="TimeDisplay"
+           x="2%"
+           y="10%"
+           font="@Fonts.limelight_100"
+           justification="Graphics.TEXT_JUSTIFY_LEFT"
+           color="#9ef547" />
+    <label id="BatteryDisplay"
+           x="83%"
+           y="5.5%"
+           font="@Fonts.roboto_conden24"
+           justification="Graphics.TEXT_JUSTIFY_LEFT"
+           color="Graphics.COLOR_WHITE" />
+    <label id="HeartRateDisplay"
+           x="222"
+           y="35%"
+           font="@Fonts.roboto_conden24"
+           justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="StepDisplay"
+           x="222"
+           y="47%"
+           font="@Fonts.roboto_conden24"
+           justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="CalDisplay"
+           x="222"
+           y="59%"
+           font="@Fonts.roboto_conden24"
+           justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="DistanceDisplay"
+           x="222"
+           y="71%"
+           font="@Fonts.roboto_conden24"
+           justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="ActiveMinDisplay"
+           x="222"
+           y="82%"
+           font="@Fonts.roboto_conden24"
+           justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <text-area id="authorText"
+               color="#fa8282"
+               x="0%"
+               y="90%"
+               justification="Graphics.TEXT_JUSTIFY_CENTER"
+               text="Come What May; Cap Cap"
+               font="@Fonts.agbalumo_30"
+               width="100%"
+               height="20%" />
+    <label id="LoveDaysDisplay"
+           x="18%"
+           y="81%"
+           font="@Fonts.allan_26"
+           justification="Graphics.TEXT_JUSTIFY_LEFT"
+           color="Graphics.COLOR_WHITE" />
 </layout>

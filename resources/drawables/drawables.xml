@@ -1,5 +1,12 @@
 <drawables>
-    <bitmap id="LauncherIcon" filename="launcher_icon.png" />
-    <bitmap id="authorIcon1" x="left" y="30%" filename="xmas-tree.png" />
-    <bitmap id="authorIcon2" x="left" y="30%" filename="luv.png" />
+    <bitmap id="LauncherIcon"
+            filename="launcher_icon.png" />
+    <bitmap id="authorIcon1"
+            x="left"
+            y="30%"
+            filename="xmas-tree.png" />
+    <bitmap id="authorIcon2"
+            x="left"
+            y="30%"
+            filename="luv.png" />
 </drawables>

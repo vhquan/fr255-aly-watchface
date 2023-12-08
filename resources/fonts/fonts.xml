@@ -1,9 +1,22 @@
 <fonts>
-
-<font id="limelight_100" antialias="true" filename="limelight_100.fnt" filter=" :0123456789" />
-<font id="unica_56" antialias="true" filename="unica_56.fnt" filter=" ,0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
-<font id="redhat_24" antialias="true" filename="redhat_24.fnt" filter=" !%'(),./~0123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
-<font id="courgette_20" antialias="true" filename="courgette_20.fnt" filter=" !%'(),./~0123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
-<font id="allan_26" antialias="true" filename="allan_26.fnt" filter=" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
-
+    <font id="limelight_100"
+          antialias="true"
+          filename="limelight_100.fnt"
+          filter=" :0123456789" />
+    <font id="unica_56"
+          antialias="true"
+          filename="unica_56.fnt"
+          filter=" ,0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
+    <font id="roboto_conden24"
+          antialias="true"
+          filename="roboto_conden24.fnt"
+          filter=" !%'(),./~0123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
+    <font id="allan_26"
+          antialias="true"
+          filename="allan_26.fnt"
+          filter=" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
+    <font id="agbalumo_30"
+          antialias="true"
+          filename="agbalumo_30.fnt"
+          filter=" !%';(),./~0123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" />
 </fonts>
