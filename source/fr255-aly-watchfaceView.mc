@@ -10,7 +10,7 @@ import Toybox.Sensor;
 
 class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   hidden var img as Array<WatchUi.BitmapResource> =
-      new Array<WatchUi.BitmapResource>[11];
+      new Array<WatchUi.BitmapResource>[20];
 
   function initialize() { WatchFace.initialize(); }
 
@@ -20,18 +20,33 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
 
     /* for x-mas */
     img[0] = WatchUi.loadResource(Rez.Drawables.xmas0);
+    img[1] = WatchUi.loadResource(Rez.Drawables.xmas1);
+    img[2] = WatchUi.loadResource(Rez.Drawables.xmas2);
+
+    /* for happy new year */
+    img[3] = WatchUi.loadResource(Rez.Drawables.hpny0);
+    img[4] = WatchUi.loadResource(Rez.Drawables.hpny1);
+
+    /* for happy birthday */
+    img[5] = WatchUi.loadResource(Rez.Drawables.birthday0);
+
+    /* for valentine */
+    img[6] = WatchUi.loadResource(Rez.Drawables.valen0);
+    img[7] = WatchUi.loadResource(Rez.Drawables.valen1);
 
     /* for normal day */
-    img[1] = WatchUi.loadResource(Rez.Drawables.normal1);
-    img[2] = WatchUi.loadResource(Rez.Drawables.normal2);
-    img[3] = WatchUi.loadResource(Rez.Drawables.normal3);
-    img[4] = WatchUi.loadResource(Rez.Drawables.normal4);
-    img[5] = WatchUi.loadResource(Rez.Drawables.normal5);
-    img[6] = WatchUi.loadResource(Rez.Drawables.normal6);
-    img[7] = WatchUi.loadResource(Rez.Drawables.normal7);
-    img[8] = WatchUi.loadResource(Rez.Drawables.normal8);
-    img[9] = WatchUi.loadResource(Rez.Drawables.normal9);
-    img[10] = WatchUi.loadResource(Rez.Drawables.normal10);
+    img[8] = WatchUi.loadResource(Rez.Drawables.normal0);
+    img[9] = WatchUi.loadResource(Rez.Drawables.normal1);
+    img[10] = WatchUi.loadResource(Rez.Drawables.normal2);
+    img[11] = WatchUi.loadResource(Rez.Drawables.normal3);
+    img[12] = WatchUi.loadResource(Rez.Drawables.normal4);
+    img[13] = WatchUi.loadResource(Rez.Drawables.normal5);
+    img[14] = WatchUi.loadResource(Rez.Drawables.normal6);
+    img[15] = WatchUi.loadResource(Rez.Drawables.normal7);
+    img[16] = WatchUi.loadResource(Rez.Drawables.normal8);
+    img[17] = WatchUi.loadResource(Rez.Drawables.normal9);
+    img[18] = WatchUi.loadResource(Rez.Drawables.normal10);
+    img[19] = WatchUi.loadResource(Rez.Drawables.normal11);
   }
 
   function onUpdate(dc as Dc) as Void {
@@ -58,10 +73,35 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
   // The user has just looked at their watch. Timers and animations may be
   // started here.
   function onExitSleep() as Void {}
-  /* TODO: Change a internal variable to decide whether to change image or not in onUpdate() function called */
+  /* TODO: Change a internal variable to decide whether to change image or not
+   * in onUpdate() function called */
 
   // Terminate any active timers and prepare for slow updates.
   function onEnterSleep() as Void {}
+
+  /* TODO: need to put this function slow update
+  (need to be called in ExitSleep) */
+ private
+  function drawBackgroundBasedOnMoment(
+      dc as Dc, imgArr as Array<WatchUi.BitmapResource>) as Void {
+    var mDate = Time.Gregorian.info(Time.now(), Time.FORMAT_SHORT);
+    var index = 0;
+
+    /* all images is 170x170 pixels */
+    if (mDate.day >= 23 && mDate.day <= 25 && mDate.month == 12) {
+      index = mDate.day % 23;
+    } else if (mDate.day == 14 && mDate.month == 2) {
+      index = 7;
+    } else if ((mDate.day == 1) || (mDate.day == 2) && mDate.month == 1) {
+      index = mDate.day + 2;
+    } else if (mDate.day == 20 && mDate.month == 10) {
+      index = 5;
+    } else {
+      index = mDate.day % 12 + 8;
+    }
+
+    dc.drawBitmap(0, 0.33 * dc.getHeight(), imgArr[index]);
+  }
 
  private
   function showActivityData() as Void {
@@ -115,27 +155,6 @@ class fr255_aly_watchfaceView extends WatchUi.WatchFace {
     mBatteryDisplay.setText(mSysStat.battery.format("%d") + "%");
 
     return (mSysStat.battery / 100);
-  }
-
-  /* TODO: need to put this function slow update
-    (need to be called in ExitSleep) */
- private
-  function drawBackgroundBasedOnMoment(
-      dc as Dc, imgArr as Array<WatchUi.BitmapResource>) as Void {
-    var r;
-    Math.srand(System.getTimer());
-    var mDate = Time.Gregorian.info(Time.now(), Time.FORMAT_SHORT);
-
-    // dc.drawRectangle(0, 0.33 * dc.getHeight(), 170, 170);
-    /* all images is 170x170 pixels */
-    if (mDate.day >= 20 && mDate.day <= 25 && mDate.month == 12) {
-      dc.drawBitmap(0, 0.33 * dc.getHeight(), imgArr[0]);
-    } else {
-      /* if there are n images to loop -> modulo (n + 1) then + m to shift the
-       * order except m images at the beginning */
-      r = Math.rand() % 10 + 1;  // random from [1 ---> 11]
-      dc.drawBitmap(0, 0.33 * dc.getHeight(), imgArr[r]);
-    }
   }
 
  private
