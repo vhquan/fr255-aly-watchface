@@ -1,27 +1,74 @@
 <layout id="WatchFace">
-    <label id="TimeDisplay" x="12%" y="15%" font="@Fonts.ribey_52" justification="Graphics.TEXT_JUSTIFY_LEFT" color="#9ef547" />
-    <label id="DateDisplay" x="87%" y="22%" font="@Fonts.galada_34" justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_YELLOW" />
-
-    <label id="BatteryDisplay" x="25%" y="45%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
-    <label id="BatteryInDaysDisplay" x="54%" y="45%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
-
-    <label id="StepDisplay" x="17%" y="58%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
-    <label id="StepGoalDisplay" x="54%" y="58%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
-
-    <label id="HeartRateDisplay" x="50%" y="3%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_CENTER" />
-
-    <label id="CalDisplay" x="74%" y="35%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
-    <label id="ClimbFloorDisplay" x="15%" y="35%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_RIGHT" />
-    <label id="DescendFloorDisplay" x="28%" y="35%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
-    <label id="TargetFloorDisplay" x="52%" y="35%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
-
-    <label id="DistanceDisplay" x="46%" y="87%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
-
-    <label id="RecoveryDisplay" x="48%" y="74%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
-    <label id="RespirationRateDisplay" x="26%" y="74%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_LEFT" />
-
-    <!-- <label id="SpO2Display" x="75%" y="84%" font="@Fonts.bell_18" justification="Graphics.TEXT_JUSTIFY_LEFT" /> -->
-
-    <label id="AuthorDisplay" x="21%" y="12%" font="@Fonts.allan_18" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_WHITE" />
-    <label id="LoveDaysDisplay" x="75%" y="12%" font="@Fonts.allan_18" justification="Graphics.TEXT_JUSTIFY_RIGHT" color="Graphics.COLOR_WHITE" />
+    <label id="TimeFormatDisplay" x="center" y="3%" font="@Fonts.inconsolata_28" justification="Graphics.TEXT_JUSTIFY_CENTER" color="#9ef547"/>
+    <label id="TimeDisplay" x="center" y="9%" font="@Fonts.dmmono_50" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE" />
+    <text-area id="DateLabel"
+               color="Graphics.COLOR_WHITE"
+               x="19%"
+               y="25%"
+               justification="Graphics.TEXT_JUSTIFY_LEFT"
+               text="[Date]"
+               font="@Fonts.inconsolata_28"
+               height="100%"
+               width="100%"/>
+    <label id="DateDisplay" x="47%" y="25%" font="@Fonts.inconsolata_28" justification="Graphics.TEXT_JUSTIFY_LEFT" color="#68b4f7" />
+    <text-area id="BattLabel"
+               color="Graphics.COLOR_WHITE"
+               x="19%"
+               y="34%"
+               justification="Graphics.TEXT_JUSTIFY_LEFT"
+               text="[Batt]"
+               font="@Fonts.inconsolata_28"
+               height="100%"
+               width="100%"/>
+    <label id="BatteryDisplay" x="47%" y="34%" font="@Fonts.inconsolata_28" justification="Graphics.TEXT_JUSTIFY_LEFT" color="#9ef547"/>
+    <text-area id="Cal_Label"
+               color="Graphics.COLOR_WHITE"
+               x="19%"
+               y="43%"
+               justification="Graphics.TEXT_JUSTIFY_LEFT"
+               text="[Cal_]"
+               font="@Fonts.inconsolata_28"
+               height="100%"
+               width="100%"/>
+    <label id="CalDisplay" x="47%" y="43%" font="@Fonts.inconsolata_28" justification="Graphics.TEXT_JUSTIFY_LEFT" color="#fc4242"/>
+    <text-area id="MoveLabel"
+               color="Graphics.COLOR_WHITE"
+               x="19%"
+               y="52%"
+               justification="Graphics.TEXT_JUSTIFY_LEFT"
+               text="[Move]"
+               font="@Fonts.inconsolata_28"
+               height="100%"
+               width="100%"/>
+    <label id="DistanceDisplay" x="47%" y="52%" font="@Fonts.inconsolata_28" justification="Graphics.TEXT_JUSTIFY_LEFT" color="#9ef547"/>
+    <text-area id="FloorLabel"
+               color="Graphics.COLOR_WHITE"
+               x="19%"
+               y="61%"
+               justification="Graphics.TEXT_JUSTIFY_LEFT"
+               text="[UpDo]"
+               font="@Fonts.inconsolata_28"
+               height="100%"
+               width="100%"/>
+    <label id="FloorDisplay" x="47%" y="61%" font="@Fonts.inconsolata_28" justification="Graphics.TEXT_JUSTIFY_LEFT" color="#68b4f7"/>
+    <text-area id="StepLabel"
+               color="Graphics.COLOR_WHITE"
+               x="19%"
+               y="70%"
+               justification="Graphics.TEXT_JUSTIFY_LEFT"
+               text="[Step]"
+               font="@Fonts.inconsolata_28"
+               height="100%"
+               width="100%"/>
+    <label id="StepDisplay" x="47%" y="70%" font="@Fonts.inconsolata_28" justification="Graphics.TEXT_JUSTIFY_LEFT" color="#cd35f0" />
+    <text-area id="Heart"
+               color="Graphics.COLOR_WHITE"
+               x="19%"
+               y="79%"
+               justification="Graphics.TEXT_JUSTIFY_LEFT"
+               text="[L_Hr]"
+               font="@Fonts.inconsolata_28"
+               height="100%"
+               width="100%"/>
+    <label id="HeartRateDisplay" x="47%" y="79%" font="@Fonts.inconsolata_28" justification="Graphics.TEXT_JUSTIFY_LEFT" color="Graphics.COLOR_YELLOW" />
 </layout>
